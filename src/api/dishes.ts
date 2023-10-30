@@ -1,9 +1,8 @@
-import DishModel from "../models/DishModel";
-
 import sushi from "../assets/sushi.png";
 import laDolce from "../assets/la-dolce.png";
+import { IDish } from "../interfaces/dishes";
 
-export const dishes: DishModel[] = [
+export const dishes: IDish[] = [
   {
     id: 1,
     img: sushi,
