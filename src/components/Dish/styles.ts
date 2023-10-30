@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
-import { TagContainer } from "../Tag/styles";
+import * as S from "../Tag/styles";
 
-export const DishContainer = styled.div`
+export const Container = styled.div`
   color: ${colors.coral};
   position: relative;
 
-  ${TagContainer} {
+  ${S.Container} {
     margin-right: 8px;
   }
 
   img {
     width: 100%;
+    display: block;
   }
 `;
 
@@ -35,9 +36,13 @@ export const TitleRatingContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 16px;
+  font-size: 1.125rem;
+
+  h2 {
+    font-size: 1.125rem;
+  }
 
   @media (max-width: 450px) {
     font-size: 0.875rem;

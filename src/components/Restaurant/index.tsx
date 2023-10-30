@@ -1,18 +1,17 @@
-import { Button, Description, RestaurantContainer, Title } from "./styles";
+import { IRestaurants } from "../../interfaces/restaurants";
+import * as S from "./styles";
 
-type Props = {
-  img: string;
-  title: string;
-  description: string;
-};
-
-export const Restaurant = ({ img, title, description }: Props) => {
+export const Restaurant = ({
+  img,
+  title,
+  description,
+}: Omit<IRestaurants, "id">) => {
   return (
-    <RestaurantContainer>
+    <S.Container>
       <img src={img} alt={title} />
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <Button>Adicionar ao carrinho</Button>
-    </RestaurantContainer>
+      <S.Title>{title}</S.Title>
+      <S.Description>{description}</S.Description>
+      <S.Button>Adicionar ao carrinho</S.Button>
+    </S.Container>
   );
 };

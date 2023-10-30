@@ -1,18 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
-export const BannerContainer = styled.div`
+export const Container = styled.div`
   max-width: 1366px;
   width: 100%;
   height: 280px;
   margin: 0 auto;
-  font-size: 2rem;
-  position: relative;
   color: ${colors.white};
-
-  @media (max-width: 600px) {
-    font-size: 1.5rem;
-  }
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const Background = styled.div`
@@ -25,31 +21,31 @@ export const Background = styled.div`
   opacity: 0.3;
 `;
 
-export const Img = styled.img`
+export const Content = styled.div`
+  max-width: 1024px;
   width: 100%;
+  margin: 0 auto;
   height: 280px;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0 2rem;
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem 2.5rem 2rem;
+  }
 `;
 
 export const Cooking = styled.h5`
-  position: absolute;
-  top: 24px;
-  left: 170px;
+  font-size: 2rem;
+  width: 100%;
   opacity: 0.5;
   font-weight: 100;
-
-  @media (max-width: 600px) {
-    left: 40px;
-  }
 `;
 
 export const Title = styled.h3`
-  position: absolute;
-  bottom: 32px;
-  left: 170px;
+  font-size: 2rem;
+  width: 100%;
   font-weight: 900;
-
-  @media (max-width: 600px) {
-    left: 40px;
-  }
+  z-index: 999;
 `;

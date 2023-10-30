@@ -1,4 +1,4 @@
-import { Description, FooterContainer, Midias } from "./styles";
+import * as S from "./styles";
 
 import logo from "../../assets/logo.png";
 import instagram from "../../assets/instagram.png";
@@ -9,19 +9,19 @@ import { Container } from "../../styles";
 export const Footer = () => {
   return (
     <Container>
-      <FooterContainer>
+      <S.Footer>
         <img src={logo} alt="Efood" />
-        <Midias>
+        <S.Midias>
           <img src={instagram} alt="Instagram" />
           <img src={facebook} alt="Facebook" />
           <img src={twitter} alt="Twitter" />
-        </Midias>
-        <Description>
+        </S.Midias>
+        <S.Description>
           A efood é uma plataforma para divulgação de estabelecimentos, a
           responsabilidade pela entrega, qualidade dos produtos é toda do
           estabelecimento contratado.
-        </Description>
-      </FooterContainer>
+        </S.Description>
+      </S.Footer>
     </Container>
   );
 };

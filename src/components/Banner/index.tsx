@@ -1,20 +1,21 @@
-import DishModel from "../../models/DishModel";
+import { IDish } from "../../interfaces/dishes";
 import { Container } from "../../styles";
-import { Background, BannerContainer, Cooking, Img, Title } from "./styles";
+import * as S from "./styles";
 
 type Props = {
-  infos: DishModel;
+  infos: IDish;
 };
 
 export const Banner = ({ infos }: Props) => {
   return (
     <Container>
-      <BannerContainer>
-        <Background />
-        <Img src={infos.img} alt={infos.title} />
-        <Cooking>{infos.tags[0]}</Cooking>
-        <Title>{infos.title}</Title>
-      </BannerContainer>
+      <S.Container style={{ backgroundImage: `url(${infos.img})` }}>
+        <S.Background />
+        <S.Content>
+          <S.Cooking>{infos.tags[0]}</S.Cooking>
+          <S.Title>{infos.title}</S.Title>
+        </S.Content>
+      </S.Container>
     </Container>
   );
 };

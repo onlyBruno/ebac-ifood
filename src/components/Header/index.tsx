@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Banner, HeaderContainer, Info, Menu } from "./style";
+import * as S from "./style";
 import { Container } from "../../styles";
 import logo from "../../assets/logo.png";
 
@@ -15,15 +15,15 @@ export type Props = {
 export const Header = ({ name, cart, info, banner, size }: Props) => {
   return (
     <Container>
-      <HeaderContainer size={size}>
-        <Menu>
+      <S.Header size={size}>
+        <S.Menu>
           <Link to="/">{name}</Link>
           <img src={logo} alt="Efood" />
           <span>{cart}</span>
-        </Menu>
-        <Info>{info}</Info>
-        <Banner>{banner}</Banner>
-      </HeaderContainer>
+        </S.Menu>
+        <S.Info>{info}</S.Info>
+        <S.Banner>{banner}</S.Banner>
+      </S.Header>
     </Container>
   );
 };

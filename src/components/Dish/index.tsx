@@ -1,24 +1,9 @@
 import star from "../../assets/star.png";
+import { IDish } from "../../interfaces/dishes";
 import { Tag } from "../Tag";
-import {
-  Button,
-  DishContainer,
-  InfosContainer,
-  Rating,
-  TagsContainer,
-  TitleRatingContainer,
-} from "./styles";
+import * as S from "./styles";
 
-type Props = {
-  id: number;
-  img: string;
-  title: string;
-  rating: string;
-  description: string;
-  tags: string[];
-};
-
-export const Dish = ({ id, img, title, rating, description, tags }: Props) => {
+export const Dish = ({ id, img, title, rating, description, tags }: IDish) => {
   const max_description_lines = 4;
 
   const style = {
@@ -27,28 +12,28 @@ export const Dish = ({ id, img, title, rating, description, tags }: Props) => {
   };
 
   return (
-    <DishContainer>
+    <S.Container>
       <img src={img} alt={title} />
-      <InfosContainer>
-        <TitleRatingContainer>
+      <S.InfosContainer>
+        <S.TitleRatingContainer>
           <h2>{title}</h2>
-          <Rating>
+          <S.Rating>
             <span>{rating}</span>
             <img src={star} alt="Estrela" />
-          </Rating>
-        </TitleRatingContainer>
+          </S.Rating>
+        </S.TitleRatingContainer>
         <p style={style}>{description}</p>
 
-        <Button>
+        <S.Button>
           <a href={`/restaurant/${id}`}>Saiba mais</a>
-        </Button>
+        </S.Button>
 
-        <TagsContainer>
+        <S.TagsContainer>
           {tags.map((tag) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
-        </TagsContainer>
-      </InfosContainer>
-    </DishContainer>
+        </S.TagsContainer>
+      </S.InfosContainer>
+    </S.Container>
   );
 };

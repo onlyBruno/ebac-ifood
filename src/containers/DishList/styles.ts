@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
-export const DishContainer = styled.main`
+export const Container = styled.main`
   background-color: ${colors.cream};
   padding: 5rem 2.5rem 7.5rem 2.5rem;
 `;

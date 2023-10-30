@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
-export const FooterContainer = styled.footer`
+export const Footer = styled.footer`
   width: 100%;
   margin: 0 auto;
   background-color: ${colors.rose};

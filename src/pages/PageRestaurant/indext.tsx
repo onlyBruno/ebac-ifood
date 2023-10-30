@@ -4,8 +4,8 @@ import { Header } from "../../components/Header";
 import { RestaurantList } from "../../containers/RestaurantList";
 import { restaurants } from "../../api/restaurants";
 import { Banner } from "../../components/Banner";
-import DishModel from "../../models/DishModel";
 import { dishes } from "../../api/dishes";
+import { IDish } from "../../interfaces/dishes";
 
 export const RestaurantPage = () => {
   const { id } = useParams();
@@ -18,7 +18,7 @@ export const RestaurantPage = () => {
         name="Restaurantes"
         cart="0 produto(s) no carrinho"
         size="big"
-        banner={<Banner infos={findId as DishModel} />}
+        banner={<Banner infos={findId as IDish} />}
       />
       <RestaurantList restaurants={restaurants} />
       <Footer />

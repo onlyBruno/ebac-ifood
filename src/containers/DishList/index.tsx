@@ -1,17 +1,17 @@
 import { Dish } from "../../components/Dish";
-import DishModel from "../../models/DishModel";
+import { IDish } from "../../interfaces/dishes";
 import { Container } from "../../styles";
-import { DishContainer, List } from "./styles";
+import * as S from "./styles";
 
 export type Props = {
-  dishes: DishModel[];
+  dishes: IDish[];
 };
 
 export const DishList = ({ dishes }: Props) => {
   return (
     <Container>
-      <DishContainer>
-        <List>
+      <S.Container>
+        <S.List>
           {dishes.map((dish) => (
             <Dish
               key={dish.id}
@@ -19,12 +19,12 @@ export const DishList = ({ dishes }: Props) => {
               img={dish.img}
               title={dish.title}
               rating={dish.rating}
-              description={dish.descrition}
+              description={dish.description}
               tags={dish.tags}
             />
           ))}
-        </List>
-      </DishContainer>
+        </S.List>
+      </S.Container>
     </Container>
   );
 };

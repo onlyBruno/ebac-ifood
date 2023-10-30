@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
 
-export const TagContainer = styled.div`
+export const Container = styled.div`
   background-color: red;
   display: inline-block;
   font-size: 0.75rem;

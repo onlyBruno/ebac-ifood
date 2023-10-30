@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 import { Props } from ".";
 
-export const HeaderContainer = styled.header<Props>`
+export const Header = styled.header<Props>`
   height: ${(props) => (props.size === "big" ? "466px" : "384px")};
   background-color: ${colors.rose};
   padding: 40px 171px;

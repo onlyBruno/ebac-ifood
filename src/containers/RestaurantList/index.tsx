@@ -1,27 +1,27 @@
 import { Restaurant } from "../../components/Restaurant";
-import RestaurantModel from "../../models/RestaurantModel";
+import { IRestaurants } from "../../interfaces/restaurants";
 import { Container } from "../../styles";
-import { ContainerDish, List } from "./styles";
+import * as S from "./styles";
 
-type Restaurants = {
-  restaurants: RestaurantModel[];
+type Props = {
+  restaurants: IRestaurants[];
 };
 
-export const RestaurantList = ({ restaurants }: Restaurants) => {
+export const RestaurantList = ({ restaurants }: Props) => {
   return (
     <Container>
-      <ContainerDish>
-        <List>
+      <S.Container>
+        <S.List>
           {restaurants.map((restaurant) => (
             <Restaurant
               key={restaurant.id}
               img={restaurant.img}
               title={restaurant.title}
-              description={restaurant.descrition}
+              description={restaurant.description}
             />
           ))}
-        </List>
-      </ContainerDish>
+        </S.List>
+      </S.Container>
     </Container>
   );
 };
