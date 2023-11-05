@@ -1,16 +1,36 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { RestaurantList } from "../../containers/RestaurantList";
-import { restaurants } from "../../api/restaurants";
 import { Banner } from "../../components/Banner";
-import { dishes } from "../../api/dishes";
-import { IDish } from "../../interfaces/dishes";
+import { IRestaurants } from "../../interfaces/IRestaurants";
+import { api } from "../../utils/api";
+import { DishList } from "../../containers/DishList";
 
 export const RestaurantPage = () => {
+  const [restaurants, setRestaurants] = useState<IRestaurants[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
-  const findId = dishes.find((restaurant) => restaurant.id === Number(id));
+  useEffect(() => {
+    const getMenu = async () => {
+      const response = await api.get("/restaurantes");
+      setRestaurants(response.data);
+      setIsLoading(false);
+    };
+
+    getMenu();
+  }, []);
+
+  const findId = restaurants.find((restaurant) => restaurant.id === Number(id));
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Carregando...</h1>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -18,9 +38,9 @@ export const RestaurantPage = () => {
         name="Restaurantes"
         cart="0 produto(s) no carrinho"
         size="big"
-        banner={<Banner infos={findId as IDish} />}
+        banner={<Banner infos={findId as IRestaurants} />}
       />
-      <RestaurantList restaurants={restaurants} />
+      <DishList dishes={findId?.cardapio} />
       <Footer />
     </>
   );

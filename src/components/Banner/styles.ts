@@ -11,14 +11,13 @@ export const Container = styled.div`
   background-repeat: no-repeat;
 `;
 
-export const Background = styled.div`
+export const Overlay = styled.div`
   width: 100%;
   height: 280px;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.3;
 `;
 
 export const Content = styled.div`
@@ -47,5 +46,5 @@ export const Title = styled.h3`
   font-size: 2rem;
   width: 100%;
   font-weight: 900;
-  z-index: 999;
+  z-index: 1;
 `;

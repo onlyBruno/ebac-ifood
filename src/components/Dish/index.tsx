@@ -1,39 +1,39 @@
-import star from "../../assets/star.png";
-import { IDish } from "../../interfaces/dishes";
-import { Tag } from "../Tag";
+import { useState } from "react";
 import * as S from "./styles";
+import { IDish } from "../../interfaces/IRestaurants";
+import { getDescription } from "../../utils/getDescription";
+import { Modal } from "../Modal";
 
-export const Dish = ({ id, img, title, rating, description, tags }: IDish) => {
-  const max_description_lines = 4;
+type Props = {
+  item: IDish;
+};
 
-  const style = {
-    maxHeight: max_description_lines * 1.2 + "em",
-    overflow: "hidden",
+export const Dish = ({ item }: Props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [details, setDetails] = useState<IDish | undefined>(undefined);
+
+  const OpenModal = (dish: IDish) => {
+    setDetails(dish);
+    setIsVisible(true);
+  };
+  const closeModal = () => {
+    setIsVisible(false);
+    setDetails(undefined);
   };
 
   return (
     <S.Container>
-      <img src={img} alt={title} />
-      <S.InfosContainer>
-        <S.TitleRatingContainer>
-          <h2>{title}</h2>
-          <S.Rating>
-            <span>{rating}</span>
-            <img src={star} alt="Estrela" />
-          </S.Rating>
-        </S.TitleRatingContainer>
-        <p style={style}>{description}</p>
-
-        <S.Button>
-          <a href={`/restaurant/${id}`}>Saiba mais</a>
-        </S.Button>
-
-        <S.TagsContainer>
-          {tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </S.TagsContainer>
-      </S.InfosContainer>
+      <S.Image src={item.foto} alt={item.nome} />
+      <S.Title>{item.nome}</S.Title>
+      <S.Description>{getDescription(item.descricao, 160)}</S.Description>
+      <S.Button onClick={() => OpenModal(item)}>Mostrar detalhes</S.Button>
+      {isVisible && (
+        <Modal
+          isVisible={isVisible}
+          handleModal={closeModal}
+          details={details}
+        />
+      )}
     </S.Container>
   );
 };

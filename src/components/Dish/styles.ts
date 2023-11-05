@@ -1,85 +1,46 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
-import * as S from "../Tag/styles";
 
 export const Container = styled.div`
-  color: ${colors.coral};
-  position: relative;
-
-  ${S.Container} {
-    margin-right: 8px;
-  }
-
-  img {
-    width: 100%;
-    display: block;
-  }
-`;
-
-export const InfosContainer = styled.div`
-  border: 1px solid ${colors.coral};
-  border-top: none;
+  color: ${colors.cream};
+  background-color: ${colors.coral};
   padding: 0.5rem;
-
-  p {
-    font-size: 0.875rem;
-    margin-bottom: 16px;
-    max-height: 88px;
-
-    @media (max-width: 450px) {
-      font-size: 0.75rem;
-    }
-  }
+  height: 338px;
 `;
 
-export const TitleRatingContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 700;
-  margin-bottom: 16px;
-  font-size: 1.125rem;
+export const Image = styled.img`
+  width: 100%;
+  height: 167px;
+  display: block;
+  object-fit: cover;
+`;
 
-  h2 {
-    font-size: 1.125rem;
-  }
+export const Title = styled.h2`
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 8px;
+`;
 
-  @media (max-width: 450px) {
-    font-size: 0.875rem;
-  }
+export const Description = styled.p`
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  margin-top: 8px;
+  height: 88px;
 
   @media (max-width: 375px) {
     font-size: 0.75rem;
+    line-height: 1rem;
   }
-`;
-
-export const Rating = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
 `;
 
 export const Button = styled.button`
-  background-color: ${colors.coral};
+  width: 100%;
+  height: 24px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: ${colors.coral};
   border: none;
-  padding: 0.25rem 0.375rem;
-
-  a {
-    font-size: 0.875rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: ${colors.white};
-
-    @media (max-width: 450px) {
-      font-size: 0.75rem;
-    }
-  }
-`;
-
-export const TagsContainer = styled.div`
-  display: flex;
-  position: absolute;
-  flex-direction: row-reverse;
-  top: 16px;
-  right: 16px;
+  cursor: pointer;
+  margin-top: 8px;
 `;

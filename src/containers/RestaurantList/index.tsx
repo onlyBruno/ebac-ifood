@@ -1,9 +1,9 @@
 import { Restaurant } from "../../components/Restaurant";
-import { IRestaurants } from "../../interfaces/restaurants";
+import { IRestaurants } from "../../interfaces/IRestaurants";
 import { Container } from "../../styles";
 import * as S from "./styles";
 
-type Props = {
+export type Props = {
   restaurants: IRestaurants[];
 };
 
@@ -15,9 +15,13 @@ export const RestaurantList = ({ restaurants }: Props) => {
           {restaurants.map((restaurant) => (
             <Restaurant
               key={restaurant.id}
-              img={restaurant.img}
-              title={restaurant.title}
-              description={restaurant.description}
+              id={restaurant.id}
+              capa={restaurant.capa}
+              titulo={restaurant.titulo}
+              avaliacao={restaurant.avaliacao}
+              descricao={restaurant.descricao}
+              tipo={restaurant.tipo}
+              destacado={restaurant.destacado}
             />
           ))}
         </S.List>

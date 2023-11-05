@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 type Props = {
-  children: string;
+  children?: string;
 };
 
 export const Tag = ({ children }: Props) => {

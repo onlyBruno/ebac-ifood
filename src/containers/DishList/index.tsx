@@ -1,27 +1,27 @@
-import { Dish } from "../../components/Dish";
-import { IDish } from "../../interfaces/dishes";
 import { Container } from "../../styles";
 import * as S from "./styles";
+import { IRestaurants } from "../../interfaces/IRestaurants";
+import { Dish } from "../../components/Dish";
 
-export type Props = {
-  dishes: IDish[];
+type Props = {
+  dishes: IRestaurants[] | undefined;
 };
 
 export const DishList = ({ dishes }: Props) => {
+  if (!dishes) {
+    return (
+      <div>
+        <h1>Carregando</h1>
+      </div>
+    );
+  }
+
   return (
     <Container>
       <S.Container>
         <S.List>
           {dishes.map((dish) => (
-            <Dish
-              key={dish.id}
-              id={dish.id}
-              img={dish.img}
-              title={dish.title}
-              rating={dish.rating}
-              description={dish.description}
-              tags={dish.tags}
-            />
+            <Dish key={dish.id} item={dish} />
           ))}
         </S.List>
       </S.Container>

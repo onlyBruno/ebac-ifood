@@ -18,7 +18,9 @@ export const Header = ({ name, cart, info, banner, size }: Props) => {
       <S.Header size={size}>
         <S.Menu>
           <Link to="/">{name}</Link>
-          <img src={logo} alt="Efood" />
+          <Link to="/">
+            <img src={logo} alt="Efood" />
+          </Link>
           <span>{cart}</span>
         </S.Menu>
         <S.Info>{info}</S.Info>
