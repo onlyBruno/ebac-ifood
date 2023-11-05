@@ -82,7 +82,6 @@ export const Button = styled.button`
 export const TagsContainer = styled.div`
   display: flex;
   position: absolute;
-  flex-direction: row-reverse;
   top: 16px;
   right: 16px;
 `;
