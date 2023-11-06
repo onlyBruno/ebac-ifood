@@ -72,7 +72,7 @@ export const Button = styled.button`
     font-size: 0.875rem;
     font-weight: bold;
     text-decoration: none;
-    color: ${colors.white};
+    color: ${colors.rose};
 
     @media (max-width: 450px) {
       font-size: 0.75rem;

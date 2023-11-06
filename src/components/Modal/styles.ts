@@ -31,6 +31,7 @@ export const ModalContent = styled.div`
   margin: 0 auto;
   display: flex;
   background-color: ${colors.coral};
+  color: ${colors.white};
   padding: 2rem;
   position: relative;
 
