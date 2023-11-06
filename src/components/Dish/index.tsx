@@ -26,7 +26,7 @@ export const Dish = ({ item }: Props) => {
       <S.Image src={item.foto} alt={item.nome} />
       <S.Title>{item.nome}</S.Title>
       <S.Description>{getDescription(item.descricao, 160)}</S.Description>
-      <S.Button onClick={() => OpenModal(item)}>Mostrar detalhes</S.Button>
+      <S.Button onClick={() => OpenModal(item)}>Adicionar ao carrinho</S.Button>
       {isVisible && (
         <Modal
           isVisible={isVisible}

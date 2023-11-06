@@ -22,6 +22,7 @@ export const Cover = styled.img`
 `;
 
 export const InfosContainer = styled.div`
+  background-color: ${colors.white};
   border: 1px solid ${colors.coral};
   border-top: none;
   padding: 0.5rem;

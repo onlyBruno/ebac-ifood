@@ -28,7 +28,12 @@ export const Modal = ({ isVisible, handleModal, details }: Props) => {
             <h3>{details?.nome}</h3>
             <S.Description>
               <p>{details?.descricao}</p>
-              <span>Serve: de {details?.porcao}</span>
+              <span>
+                Serve:{" "}
+                {details?.porcao === "1 pessoa"
+                  ? `${details.porcao}`
+                  : `de ${details?.porcao}`}{" "}
+              </span>
             </S.Description>
 
             <S.Button>

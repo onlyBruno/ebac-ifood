@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles";
 
 export const Container = styled.div`
-  color: ${colors.cream};
+  color: ${colors.rose};
   background-color: ${colors.coral};
   padding: 0.5rem;
   height: 338px;
@@ -40,6 +40,7 @@ export const Button = styled.button`
   font-size: 0.875rem;
   font-weight: 700;
   color: ${colors.coral};
+  background-color: ${colors.rose};
   border: none;
   cursor: pointer;
   margin-top: 8px;
