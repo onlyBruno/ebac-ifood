@@ -3,6 +3,7 @@ import * as S from "./styles";
 import { IDish } from "../../interfaces/IRestaurants";
 import { getDescription } from "../../utils/getDescription";
 import { Modal } from "../Modal";
+import { Button } from "../Button";
 
 type Props = {
   item: IDish;
@@ -26,7 +27,7 @@ export const Dish = ({ item }: Props) => {
       <S.Image src={item.foto} alt={item.nome} />
       <S.Title>{item.nome}</S.Title>
       <S.Description>{getDescription(item.descricao, 160)}</S.Description>
-      <S.Button onClick={() => OpenModal(item)}>Adicionar ao carrinho</S.Button>
+      <Button onClick={() => OpenModal(item)}>Adicionar ao carrinho</Button>
       {isVisible && (
         <Modal
           isVisible={isVisible}

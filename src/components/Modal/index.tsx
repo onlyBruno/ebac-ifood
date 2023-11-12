@@ -3,6 +3,8 @@ import close from "../../assets/close.png";
 import { Container } from "../../styles";
 import { IDish } from "../../interfaces/IRestaurants";
 import { formatPrice } from "../../utils/formatPrice";
+import { add, open } from "../../store/reducers/cart";
+import { useDispatch } from "react-redux";
 
 type Props = {
   isVisible: boolean;
@@ -11,6 +13,13 @@ type Props = {
 };
 
 export const Modal = ({ isVisible, handleModal, details }: Props) => {
+  const dispatch = useDispatch();
+
+  const addCart = () => {
+    dispatch(add(details!));
+    dispatch(open());
+  };
+
   return isVisible ? (
     <Container>
       <S.Modal>
@@ -36,7 +45,7 @@ export const Modal = ({ isVisible, handleModal, details }: Props) => {
               </span>
             </S.Description>
 
-            <S.Button>
+            <S.Button onClick={addCart}>
               Adicionar ao carrinho - {formatPrice(details?.preco)}
             </S.Button>
           </S.InfosContent>

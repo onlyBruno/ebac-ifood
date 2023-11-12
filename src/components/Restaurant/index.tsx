@@ -3,6 +3,7 @@ import { Tag } from "../Tag";
 import * as S from "./styles";
 import { IRestaurants } from "../../interfaces/IRestaurants";
 import { getDescription } from "../../utils/getDescription";
+import { Button } from "../Button";
 
 export const Restaurant = ({
   avaliacao,
@@ -26,9 +27,9 @@ export const Restaurant = ({
         </S.TitleRatingContainer>
         <p>{getDescription(descricao, 250)}</p>
 
-        <S.Button>
+        <Button>
           <a href={`/restaurant/${id}`}>Saiba mais</a>
-        </S.Button>
+        </Button>
 
         <S.TagsContainer>
           {destacado ? <Tag>Destaque da semana</Tag> : null}

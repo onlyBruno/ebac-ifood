@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
-import * as S from "../Tag/styles";
+import { Container as TagContainer } from "./../Tag/styles";
+import { Btn } from "../Button/styles";
 
 export const Container = styled.div`
   color: ${colors.coral};
   position: relative;
 
-  ${S.Container} {
+  ${TagContainer} {
     margin-right: 8px;
   }
 
@@ -27,11 +28,26 @@ export const InfosContainer = styled.div`
   border-top: none;
   padding: 0.5rem;
 
+  ${Btn} {
+    width: 82px;
+    background-color: ${colors.coral};
+    a {
+      font-size: 0.875rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: ${colors.rose};
+
+      @media (max-width: 450px) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
   p {
-    height: 88px;
     font-size: 0.875rem;
     line-height: 1.375rem;
     margin-bottom: 16px;
+    min-height: 88px;
 
     @media (max-width: 450px) {
       font-size: 0.75rem;
@@ -61,23 +77,6 @@ export const Rating = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
-`;
-
-export const Button = styled.button`
-  background-color: ${colors.coral};
-  border: none;
-  padding: 0.25rem 0.375rem;
-
-  a {
-    font-size: 0.875rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: ${colors.rose};
-
-    @media (max-width: 450px) {
-      font-size: 0.75rem;
-    }
-  }
 `;
 
 export const TagsContainer = styled.div`

@@ -5,7 +5,6 @@ export const Container = styled.div`
   color: ${colors.rose};
   background-color: ${colors.coral};
   padding: 0.5rem;
-  height: 338px;
 `;
 
 export const Image = styled.img`
@@ -25,23 +24,11 @@ export const Description = styled.p`
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
-  margin-top: 8px;
-  height: 88px;
+  margin: 8px 0;
+  min-height: 88px;
 
   @media (max-width: 375px) {
     font-size: 0.75rem;
     line-height: 1rem;
   }
-`;
-
-export const Button = styled.button`
-  width: 100%;
-  height: 24px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: ${colors.coral};
-  background-color: ${colors.rose};
-  border: none;
-  cursor: pointer;
-  margin-top: 8px;
 `;

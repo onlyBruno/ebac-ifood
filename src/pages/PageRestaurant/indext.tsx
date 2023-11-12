@@ -6,11 +6,15 @@ import { Banner } from "../../components/Banner";
 import { IRestaurants } from "../../interfaces/IRestaurants";
 import { api } from "../../utils/api";
 import { DishList } from "../../containers/DishList";
+import { useSelector } from "react-redux";
+import { RootReducer } from "../../store";
 
 export const RestaurantPage = () => {
   const [restaurants, setRestaurants] = useState<IRestaurants[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+
+  const { items } = useSelector((state: RootReducer) => state.cart);
 
   useEffect(() => {
     const getMenu = async () => {
@@ -36,7 +40,7 @@ export const RestaurantPage = () => {
     <>
       <Header
         name="Restaurantes"
-        cart="0 produto(s) no carrinho"
+        cart={`${items.length} produto(s) no carrinho`}
         size="big"
         banner={<Banner infos={findId as IRestaurants} />}
       />
