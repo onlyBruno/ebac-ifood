@@ -1,9 +1,11 @@
 import { useState } from "react";
-import * as S from "./styles";
-import { IDish } from "../../interfaces/IRestaurants";
-import { getDescription } from "../../utils/getDescription";
-import { Modal } from "../Modal";
+
 import { Button } from "../Button";
+import { Modal } from "../Modal";
+
+import { getDescription } from "../../utils";
+
+import * as S from "./styles";
 
 type Props = {
   item: IDish;

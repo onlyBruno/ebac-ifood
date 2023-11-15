@@ -1,9 +1,12 @@
-import star from "../../assets/star.png";
-import { Tag } from "../Tag";
-import * as S from "./styles";
-import { IRestaurants } from "../../interfaces/IRestaurants";
-import { getDescription } from "../../utils/getDescription";
 import { Button } from "../Button";
+import { Tag } from "../Tag";
+
+import { getDescription } from "../../utils";
+
+import star from "../../assets/star.png";
+
+import * as S from "./styles";
+import { Link } from "react-router-dom";
 
 export const Restaurant = ({
   avaliacao,
@@ -28,7 +31,7 @@ export const Restaurant = ({
         <p>{getDescription(descricao, 250)}</p>
 
         <Button>
-          <a href={`/restaurant/${id}`}>Saiba mais</a>
+          <Link to={`/restaurant/${id}`}>Saiba mais</Link>
         </Button>
 
         <S.TagsContainer>

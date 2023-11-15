@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles";
+import { ContainerSidebar } from "./../Sidebar/styles";
 
 export const Overlay = styled.div`
   width: 100%;
@@ -25,18 +26,13 @@ export const CartContainer = styled.div`
   &.is-open {
     display: flex;
   }
-`;
 
-export const Sidebar = styled.aside`
-  max-width: 360px;
-  width: 100%;
-  height: 100%;
-  background-color: ${colors.coral};
-  padding: 2rem 0.5rem;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    max-width: 260px;
+  ${ContainerSidebar} {
+    p {
+      font-size: 14px;
+      line-height: 1.375rem;
+      color: ${colors.rose};
+    }
   }
 `;
 

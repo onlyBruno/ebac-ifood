@@ -1,13 +1,17 @@
 import { Restaurant } from "../../components/Restaurant";
-import { IRestaurants } from "../../interfaces/IRestaurants";
+
 import { Container } from "../../styles";
 import * as S from "./styles";
 
 export type Props = {
-  restaurants: IRestaurants[];
+  restaurants?: IRestaurants[];
 };
 
 export const RestaurantList = ({ restaurants }: Props) => {
+  if (!restaurants) {
+    return <h1>Carregando...</h1>;
+  }
+
   return (
     <Container>
       <S.Container>

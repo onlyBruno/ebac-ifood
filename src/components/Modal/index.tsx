@@ -1,10 +1,13 @@
-import * as S from "./styles";
-import close from "../../assets/close.png";
-import { Container } from "../../styles";
-import { IDish } from "../../interfaces/IRestaurants";
-import { formatPrice } from "../../utils/formatPrice";
-import { add, open } from "../../store/reducers/cart";
 import { useDispatch } from "react-redux";
+
+import { add, open } from "../../store/reducers/cart";
+
+import { formatPrice } from "../../utils";
+
+import close from "../../assets/close.png";
+
+import * as S from "./styles";
+import { Container } from "../../styles";
 
 type Props = {
   isVisible: boolean;

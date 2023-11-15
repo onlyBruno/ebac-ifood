@@ -1,10 +1,10 @@
-import { Container } from "../../styles";
-import * as S from "./styles";
-import { IRestaurants } from "../../interfaces/IRestaurants";
 import { Dish } from "../../components/Dish";
 
+import * as S from "./styles";
+import { Container } from "../../styles";
+
 type Props = {
-  dishes: IRestaurants[] | undefined;
+  dishes: IDish[];
 };
 
 export const DishList = ({ dishes }: Props) => {

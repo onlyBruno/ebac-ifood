@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IDish } from "../../interfaces/IRestaurants";
 
 type CartState = {
   items: IDish[];

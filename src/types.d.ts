@@ -1,15 +1,15 @@
-export interface IRestaurants {
+declare interface IRestaurants {
   id?: number;
-  titulo?: string;
+  titulo: string;
   destacado?: boolean;
-  tipo?: string;
-  avaliacao?: number;
-  descricao?: string;
-  capa?: string;
+  tipo: string;
+  avaliacao: number;
+  descricao: string;
+  capa: string;
   cardapio?: IDish[];
 }
 
-export interface IDish {
+declare interface IDish {
   foto?: string;
   preco?: number;
   id?: number;

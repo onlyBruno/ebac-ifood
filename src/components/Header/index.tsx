@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { open } from "../../store/reducers/cart";
+
+import logo from "../../assets/logo.png";
 
 import * as S from "./style";
 import { Container } from "../../styles";
-import logo from "../../assets/logo.png";
-import { useDispatch } from "react-redux";
-import { open } from "../../store/reducers/cart";
 
 export type Props = {
   name?: string;

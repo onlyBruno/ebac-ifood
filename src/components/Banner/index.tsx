@@ -1,4 +1,3 @@
-import { IRestaurants } from "../../interfaces/IRestaurants";
 import { Container } from "../../styles";
 import * as S from "./styles";
 
