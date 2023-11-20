@@ -8,7 +8,7 @@ import { Sidebar } from "../Sidebar";
 import { RootReducer } from "../../store";
 import { close, remove } from "../../store/reducers/cart";
 
-import { formatPrice, getTotalPrice } from "../../utils";
+import { formatPrice } from "../../utils";
 
 import trash from "../../assets/trash.png";
 
@@ -25,6 +25,12 @@ export const Cart = () => {
   };
 
   const removeDish = (id: number) => dispatch(remove(id));
+
+  const getTotalPrice = () => {
+    return items.reduce((acc, currentValue) => {
+      return (acc += currentValue.preco!);
+    }, 0);
+  };
 
   return (
     <S.CartContainer className={isOpen ? "is-open" : ""}>

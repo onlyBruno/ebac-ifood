@@ -11,7 +11,7 @@ import { usePurchaseMutation } from "../../services/api";
 import { RootReducer } from "../../store";
 import { clear, close } from "../../store/reducers/cart";
 
-import { formatPrice, getTotalPrice } from "../../utils";
+import { formatPrice } from "../../utils";
 
 import * as S from "./styles";
 
@@ -111,6 +111,12 @@ export const Form = ({ handleDelivery }: Props) => {
     dispatch(close());
     handleDelivery();
     form.resetForm();
+  };
+
+  const getTotalPrice = () => {
+    return items.reduce((acc, currentValue) => {
+      return (acc += currentValue.preco!);
+    }, 0);
   };
 
   return (
