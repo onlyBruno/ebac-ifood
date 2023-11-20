@@ -1,18 +1,18 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Button } from "../Button";
-import { Form } from "../Form";
-import { Sidebar } from "../Sidebar";
 
 import { RootReducer } from "../../store";
 import { close, remove } from "../../store/reducers/cart";
 
-import { formatPrice, getTotalPrice } from "../../utils";
+import { formatPrice } from "../../utils";
 
 import trash from "../../assets/trash.png";
 
 import * as S from "./styles";
+import { Sidebar } from "../Sidebar";
+import { Form } from "../Form";
+import { useState } from "react";
 
 export const Cart = () => {
   const [isDelivery, setIsDelivery] = useState(false);
@@ -26,15 +26,21 @@ export const Cart = () => {
 
   const removeDish = (id: number) => dispatch(remove(id));
 
+  const getTotalPrice = () => {
+    return items.reduce((acc, currentValue) => {
+      return (acc += currentValue.preco!);
+    }, 0);
+  };
+
   return (
     <S.CartContainer className={isOpen ? "is-open" : ""}>
       <S.Overlay onClick={closeCart} />
       <Sidebar>
-        {items.length > 0 ? (
+        {isDelivery ? (
+          <Form handleDelivery={() => setIsDelivery(false)} />
+        ) : (
           <>
-            {isDelivery ? (
-              <Form handleDelivery={() => setIsDelivery(false)} />
-            ) : (
+            {items.length > 0 ? (
               <>
                 <ul>
                   {items.map((item) => (
@@ -61,13 +67,13 @@ export const Cart = () => {
                   Continuar com a entrega
                 </Button>
               </>
+            ) : (
+              <p>
+                O carrinho está vazio, adicione pelo menos um produto para
+                continuar com a compra
+              </p>
             )}
           </>
-        ) : (
-          <p>
-            O carrinho está vazio, adicione pelo menos um produto para continuar
-            com a compra
-          </p>
         )}
       </Sidebar>
     </S.CartContainer>

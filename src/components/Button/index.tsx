@@ -5,8 +5,13 @@ import * as S from "./styles";
 type Props = {
   children: ReactNode;
   onClick?: () => void;
+  type?: "button" | "submit";
 };
 
-export const Button = ({ children, onClick }: Props) => {
-  return <S.Btn onClick={onClick}>{children}</S.Btn>;
+export const Button = ({ children, type, onClick }: Props) => {
+  return (
+    <S.Btn type={type} onClick={onClick}>
+      {children}
+    </S.Btn>
+  );
 };

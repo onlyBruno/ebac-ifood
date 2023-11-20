@@ -21,6 +21,7 @@ export const Modal = ({ isVisible, handleModal, details }: Props) => {
   const addCart = () => {
     dispatch(add(details!));
     dispatch(open());
+    handleModal();
   };
 
   return isVisible ? (
